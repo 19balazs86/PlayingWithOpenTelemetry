@@ -24,8 +24,8 @@ In this repository, I started to explore the OpenTelemetry observability framewo
 - Blog posts from 📓*Code-Maze*
   - [Tracing applications and using Jaeger for visualization](https://code-maze.com/tracing-dotnet-applications-opentelemetry) *- Instrument WebApi requests and SQL client*
   - [Tracking application health, Metrics, Prometheus for visualization](https://code-maze.com/tracking-dotnet-opentelemetry-metrics)
-  - [Alternative Way of Logging With OpenTelemetry](https://code-maze.com/dotnet-opentelemetry-logging) *(Console application with Exporter.Console, Traces, Events, Custom Log Processor)*
-  - [Using OpenTelemetry collector](https://code-maze.com/vendor-agnostic-telemetry-opentelemetry-collector-dotnet)
+  - [Alternative way of logging with OpenTelemetry](https://code-maze.com/dotnet-opentelemetry-logging) *(Console application with Exporter.Console, Traces, Events, Custom Log Processor)*
+  - [Using OpenTelemetry collector, OTLP](https://code-maze.com/vendor-agnostic-telemetry-opentelemetry-collector-dotnet)
 - Blog posts from 📓*Twilio*
   - [Propagate OpenTelemetry Context via Azure Service Bus](https://www.twilio.com/blog/propagate-opentelemetry-context-via-azure-service-bus-for-async-dotnet-services)
   - [Automatic instrumentation of containerized applications](https://www.twilio.com/blog/automatic-instrumentation-of-containerized-dotnet-applications-with-opentelemetry) | [Source code](https://github.com/rahulrai-in/autoinstrumentation-demo)
@@ -33,7 +33,7 @@ In this repository, I started to explore the OpenTelemetry observability framewo
   - [Export logs to AzureMonitor](https://www.twilio.com/blog/export-logs-to-azure-monitor-with-opentelemetry-and-dotnet)
 - [OpenTelemetry will save your day and night](https://www.youtube.com/watch?v=pz4bNmlss3w) 📽️*1hour- Alexey Zimarev - NDC Oslo, 2021*
 - [Example of automatic and manual instrumentation](https://logz.io/blog/csharp-dotnet-opentelemetry-instrumentation) 📓*logz.io*
-- [OpenTelemetry logs with Seq](https://blog.datalust.co/self-hosted-opentelemetry-logs) 📓*Seq blog*
+- [Logging with OTLP to Seq](https://blog.datalust.co/self-hosted-opentelemetry-logs) 📓*Seq blog*
 - [Set up OpenTelemetry with Event Sourcing and Marten](https://event-driven.io/en/set_up_opentelemetry_wtih_event_sourcing_and_marten) 📓*Oskar Dudycz*
 - [Jaeger](https://www.jaegertracing.io): Open-source, end-to-end distributed tracing
   - [Download Jaeger](https://www.jaegertracing.io/download) -> Run: jaeger-all-in-one.exe -> http://localhost:16686
