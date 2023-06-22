@@ -31,6 +31,7 @@ In this repository, I started to explore the OpenTelemetry observability framewo
   - [Automatic instrumentation of containerized applications](https://www.twilio.com/blog/automatic-instrumentation-of-containerized-dotnet-applications-with-opentelemetry) | [Source code](https://github.com/rahulrai-in/autoinstrumentation-demo)
   - [How to build logs pipeline in with OpenTelemetry](https://www.twilio.com/blog/build-a-logs-pipeline-in-dotnet-with-opentelemetry)
   - [Export logs to AzureMonitor](https://www.twilio.com/blog/export-logs-to-azure-monitor-with-opentelemetry-and-dotnet)
+- [Practical OpenTelemetry for .NET](https://youtu.be/c4AJlZeX2fE) 📽️*1hour - Martin Thwaites - NDC Oslo 2023*
 - [OpenTelemetry will save your day and night](https://www.youtube.com/watch?v=pz4bNmlss3w) 📽️*1hour- Alexey Zimarev - NDC Oslo, 2021*
 - [Example of automatic and manual instrumentation](https://logz.io/blog/csharp-dotnet-opentelemetry-instrumentation) 📓*logz.io*
 - [Logging with OTLP to Seq](https://blog.datalust.co/self-hosted-opentelemetry-logs) 📓*Seq blog*
