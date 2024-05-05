@@ -15,7 +15,7 @@
 
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Http" />
-    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" />
   </ItemGroup>
 
 </Project>

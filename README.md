@@ -9,7 +9,7 @@ In this repository, I started to explore the OpenTelemetry observability framewo
 - HelloController: Returns a random response (200, 400, 500, ...) to simulate real-life scenarios involving both good and bad responses.
 
 ###### ClientConsoleApp
-- **Tracing exporter**: Configured for Jaeger
+- **Tracing exporter**: Configured for Otlp / OpenTelemetryProtocol (I used Jaeger, which supports Otlp)
 - Console application, which initiate HTTP calls to the WebApi
 - Using [Polly](https://github.com/App-vNext/Polly) to retry and cancel the call
 

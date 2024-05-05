@@ -21,7 +21,7 @@ public static class Program
             .WithTracing(builder => builder
                 .AddSource(ClientActivities.Name)
                 .AddHttpClientInstrumentation() // Outgoing HTTP call: Instrumentation.Http
-                .AddJaegerExporter());
+                .AddOtlpExporter()); // jaeger-all-in-one has an Otlp receiver gRPC endpoint on port 4317
 
         using ServiceProvider serviceProvider = services.BuildServiceProvider();
 

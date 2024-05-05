@@ -49,6 +49,6 @@ public sealed class HelloClient : IHelloClient
 
         activity.SetStatus(asc, responseString);
 
-        Console.WriteLine(responseString);
+        Console.WriteLine($"Say hello to: '{helloTo}' with response: '{responseString}'");
     }
 }
