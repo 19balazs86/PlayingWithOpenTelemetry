@@ -23,10 +23,20 @@ public static class Program
 
             services
                 .AddOpenTelemetry()
-                .ConfigureResource(builder => builder.AddService(_serviceName))
-                .WithTracing(builder => builder
-                    .AddAspNetCoreInstrumentation() // Incoming HTTP request: Instrumentation.AspNetCore
-                    .AddOtlpExporter()); // jaeger-all-in-one has an Otlp receiver gRPC endpoint on port 4317
+                .ConfigureResource(resBuilder => resBuilder.AddService(_serviceName))
+                .WithTracing(tpBuilder =>
+                {
+                    // Incoming HTTP request: Instrumentation.AspNetCore
+                    tpBuilder.AddAspNetCoreInstrumentation();
+
+                    // jaeger-all-in-one has an Otlp receiver gRPC endpoint on port 4317
+                    tpBuilder.AddOtlpExporter();
+
+                    if (builder.Environment.IsDevelopment())
+                    {
+                        tpBuilder.SetSampler<AlwaysOnSampler>();
+                    }
+                });
         }
 
         WebApplication app = builder.Build();
