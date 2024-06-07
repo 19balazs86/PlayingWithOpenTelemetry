@@ -1,3 +1,5 @@
+using OpenTelemetry;
+using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
@@ -24,30 +26,35 @@ public static class Program
             services
                 .AddOpenTelemetry()
                 .ConfigureResource(resBuilder => resBuilder.AddService(_serviceName))
-                .WithTracing(tpBuilder =>
-                {
-                    // Incoming HTTP request: Instrumentation.AspNetCore
-                    tpBuilder.AddAspNetCoreInstrumentation();
-
-                    // jaeger-all-in-one has an Otlp receiver gRPC endpoint on port 4317
-                    tpBuilder.AddOtlpExporter();
-
-                    if (builder.Environment.IsDevelopment())
-                    {
-                        tpBuilder.SetSampler<AlwaysOnSampler>();
-                    }
-                });
+                .UseOtlpExporter() // Globaly set OTLP exporter | jaeger-all-in-one has an OTLP receiver gRPC endpoint on port 4317
+                .WithTracing(configureTracing)
+                .WithMetrics(configureMetrics);
         }
 
         WebApplication app = builder.Build();
 
         // Configure the HTTP request pipeline
         {
-            app.UseExceptionHandlingMiddleware();
+            app.UseCustomExceptionHandlingMiddleware();
 
             app.MapControllers();
         }
 
         app.Run();
+    }
+
+    private static void configureTracing(TracerProviderBuilder tpBuilder)
+    {
+        // Incoming HTTP request: Instrumentation.AspNetCore
+        tpBuilder.AddAspNetCoreInstrumentation();
+
+        // tpBuilder.AddOtlpExporter(); // You can apply OTLP globally for tracing and metrics with the UseOtlpExporter method
+
+        tpBuilder.SetSampler<AlwaysOnSampler>(); // Only for DEV
+    }
+
+    private static void configureMetrics(MeterProviderBuilder mpBuilder)
+    {
+
     }
 }
