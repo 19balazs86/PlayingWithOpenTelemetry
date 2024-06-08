@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using System.Diagnostics;
@@ -18,10 +19,7 @@ public static class Program
         services
             .AddOpenTelemetry()
             .ConfigureResource(builder => builder.AddService("ClientApp", serviceInstanceId: Environment.MachineName))
-            .WithTracing(builder => builder
-                .AddSource(ClientActivities.Name)
-                .AddHttpClientInstrumentation() // Outgoing HTTP call: Instrumentation.Http
-                .AddOtlpExporter()); // jaeger-all-in-one has an Otlp receiver gRPC endpoint on port 4317
+            .WithTracing(configureTracing);
 
         using ServiceProvider serviceProvider = services.BuildServiceProvider();
 
@@ -42,5 +40,16 @@ public static class Program
         IEnumerable<Task> tasks = Enumerable.Range(1, 5).Select(n => helloClient.SayHello($"Balazs{n}"));
 
         await Task.WhenAll(tasks);
+    }
+
+    private static void configureTracing(TracerProviderBuilder tpBuilder)
+    {
+        tpBuilder.AddSource(ClientActivities.Name);
+
+        tpBuilder.AddHttpClientInstrumentation(); // Outgoing HTTP call: Instrumentation.Http
+
+        tpBuilder.AddOtlpExporter(); // jaeger-all-in-one has an Otlp receiver gRPC endpoint on port 4317
+
+        tpBuilder.SetSampler<AlwaysOnSampler>(); // Only for DEV
     }
 }

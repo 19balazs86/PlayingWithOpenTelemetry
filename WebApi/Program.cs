@@ -26,7 +26,7 @@ public static class Program
             services
                 .AddOpenTelemetry()
                 .ConfigureResource(resBuilder => resBuilder.AddService(_serviceName))
-                .UseOtlpExporter() // Globaly set OTLP exporter | jaeger-all-in-one has an OTLP receiver gRPC endpoint on port 4317
+                .UseOtlpExporter() // Globally set OTLP exporter | jaeger-all-in-one has an OTLP receiver gRPC endpoint on port 4317
                 .WithTracing(configureTracing)
                 .WithMetrics(configureMetrics);
         }
