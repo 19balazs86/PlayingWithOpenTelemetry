@@ -48,7 +48,7 @@ public static class Program
 
         tpBuilder.AddHttpClientInstrumentation(); // Outgoing HTTP call: Instrumentation.Http
 
-        tpBuilder.AddOtlpExporter(); // jaeger-all-in-one has an Otlp receiver gRPC endpoint on port 4317
+        tpBuilder.AddOtlpExporter(); // Aspire-dashboard and jaeger-all-in-one has an OTLP receiver gRPC endpoint on port 4317
 
         tpBuilder.SetSampler<AlwaysOnSampler>(); // Only for DEV
     }
