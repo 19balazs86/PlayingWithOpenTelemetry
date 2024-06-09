@@ -32,6 +32,8 @@ public sealed class HelloController : ControllerBase
 
         activity.SetTag("SelectedStatusCode", selectedStatusCode.ToString());
 
+        HelloMetrics.IncrementCounter(name, (int)selectedStatusCode);
+
         // --> Return OK
         if (selectedStatusCode == HttpStatusCode.OK)
             return Ok($"Hello {name}!");

@@ -23,7 +23,6 @@ In this repository, I started to explore the OpenTelemetry observability framewo
   - .[NET Contrib](https://github.com/open-telemetry/opentelemetry-dotnet-contrib) 👤*open-telemetry (instrumentation and exporter libraries)*
 - From: *Nick Chapsas*
   - [Getting Started with OpenTelemetry](https://youtu.be/nFU-hcHyl2s) 📽*20 min*
-  - [Metrics dashboards with .NET8](https://youtu.be/A2pKhNQoQUU) 📽*12 min*
   - [Measure and visualize metrics with .NET Aspire](https://youtu.be/8kDugxr3Hdg) 📽*13 min*
   - [Using .NET Aspire Dashboard](https://youtu.be/617oVraGY_M) 📽*11 min*
 - Blog posts from 📓*Code-Maze*
