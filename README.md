@@ -33,7 +33,6 @@ In this repository, I started to explore the OpenTelemetry observability framewo
   - [Propagate OpenTelemetry Context via Azure Service Bus](https://www.twilio.com/blog/propagate-opentelemetry-context-via-azure-service-bus-for-async-dotnet-services)
   - [Automatic instrumentation of containerized applications](https://www.twilio.com/blog/automatic-instrumentation-of-containerized-dotnet-applications-with-opentelemetry) | [Source code](https://github.com/rahulrai-in/autoinstrumentation-demo)
   - [How to build logs pipeline in with OpenTelemetry](https://www.twilio.com/blog/build-a-logs-pipeline-in-dotnet-with-opentelemetry)
-  - [Export logs to AzureMonitor](https://www.twilio.com/blog/export-logs-to-azure-monitor-with-opentelemetry-and-dotnet)
 - [Introduction to OpenTelemetry and using .NET Aspire Dashboard](https://youtu.be/HrRrJ5wTtdk) 📽*14 min - Milan*
 - [Practical OpenTelemetry](https://youtu.be/WzZI_IT6gYo) 📽️*1 hour - Martin Thwaites - NDC London 2024*
 - [Example of automatic and manual instrumentation](https://logz.io/blog/csharp-dotnet-opentelemetry-instrumentation) 📓*logz.io*
