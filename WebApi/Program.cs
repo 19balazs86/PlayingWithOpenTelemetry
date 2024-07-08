@@ -8,8 +8,6 @@ namespace WebApi;
 
 public static class Program
 {
-    public const string ServiceName = "WebApi";
-
     public static void Main(string[] args)
     {
         WebApplicationBuilder builder  = WebApplication.CreateBuilder(args);
@@ -24,7 +22,7 @@ public static class Program
 
             services
                 .AddOpenTelemetry()
-                .ConfigureResource(resBuilder => resBuilder.AddService(ServiceName)) // Globally set for Tracing, Metrics and Logs
+                .ConfigureResource(configureResource) // Globally set for Tracing, Metrics and Logs
                 .UseOtlpExporter() // Globally set for Tracing, Metrics and Logs | Aspire-dashboard and jaeger-all-in-one has an OTLP receiver gRPC endpoint on port 4317
                 .WithTracing(configureTracing)
                 .WithMetrics(configureMetrics);
@@ -42,6 +40,16 @@ public static class Program
         app.Run();
     }
 
+    private static void configureResource(ResourceBuilder resBuilder)
+    {
+        resBuilder.AddService(
+            serviceName: DiagnosticConfig.ServiceName,
+            serviceVersion: DiagnosticConfig.ServiceVersion,
+            serviceInstanceId: Environment.MachineName);
+
+        // resBuilder.AddAttributes([KeyValuePair.Create<string, object>("MyKey", "MyValue")]);
+    }
+
     private static void configureTracing(TracerProviderBuilder builder)
     {
         // Incoming HTTP request: Instrumentation.AspNetCore
@@ -56,7 +64,7 @@ public static class Program
     {
         builder.AddAspNetCoreInstrumentation();
 
-        builder.AddMeter(HelloMetrics.Meter.Name);
+        builder.AddMeter(DiagnosticConfig.Meter.Name);
     }
 
     private static void configureLogging(OpenTelemetryLoggerOptions options)

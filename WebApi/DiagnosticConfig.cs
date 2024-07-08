@@ -2,9 +2,15 @@
 
 namespace WebApi;
 
-public static class HelloMetrics
+public static class DiagnosticConfig
 {
-    public static Meter Meter = new Meter(Program.ServiceName);
+    public const string ServiceName = "WebApi";
+
+    public static string ServiceVersion = typeof(Program).Assembly.GetName().Version?.ToString() ?? "unknown";
+
+    //public static ActivitySource ActivitySource = new ActivitySource(ServiceName, ServiceVersion);
+
+    public static Meter Meter = new Meter(ServiceName, ServiceVersion);
 
     public static Counter<int> HelloCounter = Meter.CreateCounter<int>("hello.get");
 
