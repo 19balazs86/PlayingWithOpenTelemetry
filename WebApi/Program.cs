@@ -64,6 +64,9 @@ public static class Program
     {
         builder.AddAspNetCoreInstrumentation();
 
+        // Read more: https://github.com/open-telemetry/opentelemetry-dotnet-contrib/tree/main/src/OpenTelemetry.Instrumentation.Runtime
+        // builder.AddRuntimeInstrumentation(); // Additional metrics
+
         builder.AddMeter(DiagnosticConfig.Meter.Name);
     }
 
