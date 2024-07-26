@@ -18,14 +18,15 @@ public static class Program
         {
             services.AddControllers();
 
-            loggingBuilder.AddOpenTelemetry(configureLogging);
+            // loggingBuilder.AddOpenTelemetry(configureLogging); // This works as well
 
             services
                 .AddOpenTelemetry()
                 .ConfigureResource(configureResource) // Globally set for Tracing, Metrics and Logs
                 .UseOtlpExporter() // Globally set for Tracing, Metrics and Logs | Aspire-dashboard and jaeger-all-in-one has an OTLP receiver gRPC endpoint on port 4317
                 .WithTracing(configureTracing)
-                .WithMetrics(configureMetrics);
+                .WithMetrics(configureMetrics)
+                .WithLogging(loggerProviderBuilder => { }, configureLogging);
         }
 
         WebApplication app = builder.Build();
