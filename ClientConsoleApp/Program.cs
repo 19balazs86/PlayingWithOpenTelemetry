@@ -18,6 +18,7 @@ public static class Program
 
         services
             .AddOpenTelemetry()
+            //.UseAzureMonitor() // Install-Package Azure.Monitor.OpenTelemetry.AspNetCore | Both can be applied: UseAzureMonitor and AddOtlpExporter
             .ConfigureResource(builder => builder.AddService("ClientApp", serviceInstanceId: Environment.MachineName))
             .WithTracing(configureTracing);
 

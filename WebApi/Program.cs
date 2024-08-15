@@ -23,6 +23,7 @@ public static class Program
             services
                 .AddOpenTelemetry()
                 .ConfigureResource(configureResource) // Globally set for Tracing, Metrics and Logs
+                //.UseAzureMonitor() // Install-Package Azure.Monitor.OpenTelemetry.AspNetCore | Both can be applied: UseAzureMonitor and UseOtlpExporter
                 .UseOtlpExporter() // Globally set for Tracing, Metrics and Logs | Aspire-dashboard and jaeger-all-in-one has an OTLP receiver gRPC endpoint on port 4317
                 .WithTracing(configureTracing)
                 .WithMetrics(configureMetrics)

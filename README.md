@@ -16,9 +16,9 @@ In this repository, I started to explore the OpenTelemetry observability framewo
 #### Resources
 - [OpenTelemetry](https://opentelemetry.io) 📓*Official*
 - Client libraries
-  - [OpenTelemetry Azure Monitor Distro](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/monitor/Azure.Monitor.OpenTelemetry.AspNetCore) 👤*Azure (Client library that sends telemetry data to Azure Monitor following the OpenTelemetry specification)*
+  - [Azure.Monitor.OpenTelemetry.AspNetCore](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/monitor/Azure.Monitor.OpenTelemetry.AspNetCore) 👤*Azure (Client library that sends telemetry data to Azure Monitor following the OpenTelemetry specification)*
     - [Getting started with AzureMonitor OpenTelemetry Distro](https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-enable) 📚*Microsoft Learn*
-  - [AzureMonitor exporter](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/monitor/Azure.Monitor.OpenTelemetry.Exporter) 👤*Azure (exporter for traces, metrics, and logs)*
+    - [Azure.Monitor.OpenTelemetry.Exporter](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/monitor/Azure.Monitor.OpenTelemetry.Exporter) 👤*Azure (exporter for traces, metrics, and logs)*
   - [.NET client library](https://github.com/open-telemetry/opentelemetry-dotnet) 👤*open-telemetry (instrumentation and exporter libraries)*
   - .[NET Contrib](https://github.com/open-telemetry/opentelemetry-dotnet-contrib) 👤*open-telemetry (instrumentation and exporter libraries)*
 - From: *Nick Chapsas*
