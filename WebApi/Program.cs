@@ -60,6 +60,9 @@ public static class Program
         // builder.AddOtlpExporter(); // You can apply OTLP exporter for Tracing, Metrics and Logs globally with the UseOtlpExporter method
 
         builder.SetSampler<AlwaysOnSampler>(); // Only for DEV
+
+        // https://github.com/open-telemetry/opentelemetry-dotnet/blob/main/docs/trace/extending-the-sdk/MyFilteringProcessor.cs
+        // builder.AddProcessor<FilteringProcessor>();
     }
 
     private static void configureMetrics(MeterProviderBuilder builder)
