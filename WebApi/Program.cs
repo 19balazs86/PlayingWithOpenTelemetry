@@ -79,6 +79,8 @@ public static class Program
     {
         // options.AddOtlpExporter(); // You can apply OTLP exporter for Tracing, Metrics and Logs globally with the UseOtlpExporter method
 
+        options.AddProcessor(new ActivityEventLogProcessor());
+
         options.IncludeScopes           = true;
         options.IncludeFormattedMessage = true;
     }
