@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace WebApi;
+namespace WebApi.Miscellaneous;
 
 public static class Dummy
 {

@@ -1,4 +1,4 @@
-﻿namespace WebApi;
+﻿namespace WebApi.Miscellaneous;
 
 public static class ExceptionMiddlewareExtensions
 {
